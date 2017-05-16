@@ -43,7 +43,7 @@ table {
 
 h1 {
   font-size: 40px;
-  color: #222222; }
+  color: #222; }
 
 h2 {
   font-size: 20px;
@@ -54,7 +54,7 @@ a {
   text-decoration: none; }
 
 .project {
-  color: white;
+  color: #fff;
   padding: 20px;
   width: 100%;
   height: auto; }
@@ -71,16 +71,16 @@ a {
   .code img {
     width: 80%; } }
 .code h1 {
-  color: white;
+  color: #fff;
   padding: 20px;
   margin-top: 40px; }
 
 h1 {
-  color: white;
+  color: #fff;
   padding: 20px; }
 
 footer h1 {
-  color: #333333; }
+  color: #333; }
 
 .demo img {
   width: 60%; }
@@ -97,7 +97,7 @@ html {
 body {
   font-family: "Open Sans", sans-serif;
   width: 100%;
-  background: #222222; }
+  background: #222; }
 
 .container {
   position: relative;
@@ -120,13 +120,13 @@ header {
   header .banner {
     position: relative;
     z-index: 1;
-    background-color: #222222;
+    background-color: #222;
     opacity: 0.9; }
     header .banner .logo {
       width: 100%;
       font-family: "Candal", sans-serif;
       margin-top: 50px;
-      color: white;
+      color: #fff;
       font-size: 40px;
       text-shadow: 0 0 5px #42f49e;
       display: inline-block; }
@@ -163,7 +163,7 @@ header {
       header .navlist {
         width: 100%;
         height: 100vh;
-        background: #333333;
+        background: #333;
         padding-top: 100px;
         display: none; } }
     header .navlist li {
@@ -177,14 +177,14 @@ header {
       @media screen and (max-width: 570px) {
         header .navlist li {
           margin: 0px;
-          border-bottom: #555555 solid 1px;
+          border-bottom: #555 solid 1px;
           display: block;
           height: 100px;
           width: auto; }
           header .navlist li:first-child {
-            border-top: #555555 solid 1px; } }
+            border-top: #555 solid 1px; } }
   header .active {
-    border-bottom: 2px solid white; }
+    border-bottom: 2px solid #fff; }
     @media screen and (max-width: 570px) {
       header .active {
         border-bottom: none; } }
@@ -205,7 +205,7 @@ header {
 #main_wrapper {
   text-align: center;
   margin: auto;
-  background: white;
+  background: #fff;
   width: 100%; }
   #main_wrapper p {
     text-align: center;
@@ -222,7 +222,7 @@ header {
     padding: 20px;
     margin: auto;
     display: flex;
-    background: white;
+    background: #fff;
     max-width: 980px;
     height: 100%;
     justify-content: space-around;
@@ -236,7 +236,7 @@ header {
         padding: 0px;
         font-size: 12px;
         font-weight: 600;
-        color: #333333; }
+        color: #333; }
         @media screen and (max-width: 600px) {
           #main_wrapper #main .icons p {
             font-size: 10px; } }
@@ -282,16 +282,16 @@ header {
 
 .Myskills {
   width: 100%;
-  background: white; }
+  background: #fff; }
   .Myskills h1 {
-    color: #333333; }
+    color: #333; }
 
 .skills {
   padding: 20px 0px;
   max-width: 980px;
   width: 80%;
   margin: auto;
-  color: #333333;
+  color: #333;
   font-size: 18px;
   display: flex;
   flex-wrap: wrap;
@@ -302,12 +302,12 @@ header {
       padding-bottom: 5px; }
   .skills .skill-bar {
     width: 300px;
-    border: 16px solid #333333;
+    border: 16px solid #333;
     border-radius: 50px;
     z-index: 3;
     position: relative; }
     .skills .skill-bar span {
-      color: #333333;
+      color: #333;
       position: absolute;
       left: 0px;
       top: -8px;
@@ -347,7 +347,7 @@ header {
       transform: translateY(-50%); }
 
 .diploma {
-  color: #333333;
+  color: #333;
   width: 100%;
   padding: 20px 0px 40px; }
   .diploma h1 {
@@ -357,7 +357,7 @@ header {
     width: 100%; }
     .diploma a img {
       max-width: 320px;
-      box-shadow: 0px 0px 10px 5px #999999; }
+      box-shadow: 0px 0px 10px 5px #999; }
 
 .work h1 {
   padding: 40px 20px;
@@ -373,22 +373,40 @@ header {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center; }
-  .work .gallery a {
-    flex: 1 1 auto;
-    width: 50px;
-    margin: 10px; }
-    @media screen and (max-width: 600px) {
-      .work .gallery a {
-        width: 100%; } }
-  .work .gallery img {
-    width: 100%;
-    padding: 0px;
-    margin: 0px;
-    border: 0px; }
+  .work .gallery .cardbox {
+    width: 50%;
+    perspective: 600px; }
+    .work .gallery .cardbox:hover .card {
+      transform: rotateY(180deg); }
+    .work .gallery .cardbox .card {
+      width: 100%;
+      height: auto;
+      transform-style: preserve-3d;
+      transition: 0.5s ease;
+      position: relative; }
+      .work .gallery .cardbox .card .cardFace, .work .gallery .cardbox .card .cardBack {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        backface-visibility: hidden; }
+      .work .gallery .cardbox .card .cardFace a {
+        flex: 1 1 auto;
+        width: 50px;
+        margin: 10px; }
+        @media screen and (max-width: 600px) {
+          .work .gallery .cardbox .card .cardFace a {
+            width: 100%; } }
+      .work .gallery .cardbox .card .cardFace img {
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+        border: 0px; }
+      .work .gallery .cardbox .card .cardBack {
+        transform: rotateY(180deg); }
 
 #social {
   margin-top: 40px;
-  background: white;
+  background: #fff;
   width: 100%;
   height: auto; }
   #social .social-links {
@@ -408,12 +426,12 @@ header {
     #social .social h1 {
       font-weight: 400;
       padding: 50px 0px;
-      color: #333333;
+      color: #333;
       font-family: "Open Sans", sans-serif; }
     #social .social #email {
       display: inline-block;
       width: auto;
-      color: #333333;
+      color: #333;
       margin: auto;
       padding-top: 20px;
       font-size: 28px;
@@ -443,7 +461,7 @@ header {
       padding: 0px 20px;
       height: 30px;
       width: 40%;
-      color: #333333;
+      color: #333;
       font-size: 20px;
       font-family: "Open Sans", sans-serif; }
     #contact .form textarea {
@@ -455,7 +473,7 @@ header {
       padding: 10px 40px;
       margin-left: auto;
       background: #42f49e;
-      color: #333333;
+      color: #333;
       border: none;
       font-size: 20px; }
   @media screen and (max-width: 640px) {
@@ -469,7 +487,7 @@ header {
           margin-bottom: 20px; } }
 
 footer {
-  background: white;
+  background: #fff;
   padding: 40px 20px;
   margin-top: 40px; }
   footer .social-links {
@@ -480,3 +498,5 @@ footer {
     @media screen and (max-width: 600px) {
       footer .social-links {
         width: 80%; } }
+
+/*# sourceMappingURL=style.css.map */

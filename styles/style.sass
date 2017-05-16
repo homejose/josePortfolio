@@ -298,17 +298,42 @@ header
             flex-wrap: wrap
             justify-content: space-around
             align-items: center
-            a
-                  flex: 1 1 auto
-                  width: 50px
-                  margin: 10px
-                  @media screen and (max-width: 600px)
+            .cardbox
+                  flex:auto
+                  width: 50%
+                  perspective: 600px
+                  &:hover .card
+                        transform: rotateY(180deg)
+
+
+
+
+                  .card
                         width: 100%
-            img,
-                  width: 100%
-                  padding: 0px
-                  margin: 0px
-                  border: 0px
+                        height: auto
+                        transform-style: preserve-3d
+                        transition: .5s ease
+                        position: relative
+                        .cardFace, .cardBack
+                              position: absolute
+                              width: 100%
+                              height: auto
+                              backface-visibility: hidden
+                        .cardFace
+                              a
+                                    flex: 1 1 auto
+                                    width: 50px
+                                    margin: 10px
+                                    @media screen and (max-width: 600px)
+                                          width: 100%
+                              img,
+                                    width: 100%
+                                    padding: 0px
+                                    margin: 0px
+                                    border: 0px
+
+                        .cardBack
+                              transform: rotateY(180deg)
 #social
       margin-top: 40px
       background: $white
