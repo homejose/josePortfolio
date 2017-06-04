@@ -154,7 +154,7 @@ header {
       display: none; }
   header .hamlist {
     display: none; }
-    @media screen and (min-width: 570px) {
+    @media screen and (max-width: 570px) {
       header .hamlist {
         display: none; } }
   header .navlist {
@@ -347,10 +347,12 @@ header {
       transform: translateY(-50%); }
 
 .diploma {
+  display: inline-block;
   color: #333;
-  width: 100%;
-  padding: 20px 0px 40px; }
-  .diploma h1 {
+  width: auto;
+  margin: 20px 20px 40px 20px; }
+  .diploma h2 {
+    color: #333;
     padding: 40px 20px;
     font-family: "Open Sans", sans-serif; }
   .diploma a {
@@ -359,76 +361,96 @@ header {
       max-width: 320px;
       box-shadow: 0px 0px 10px 5px #999; }
 
-.work h1 {
-  padding: 40px 20px;
-  color: #42f49e;
-  font-family: "Open Sans", sans-serif; }
-.work .gallery {
-  margin: 0px;
-  padding: 0px;
-  border: 0px;
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center; }
-  .work .gallery .cardbox {
-    width: 50%;
-    perspective: 600px; }
-    .work .gallery .cardbox:hover .card {
-      transform: rotateY(180deg); }
-    .work .gallery .cardbox .card {
-      width: 100%;
-      height: auto;
-      transform-style: preserve-3d;
-      transition: 0.5s ease;
-      position: relative; }
-      .work .gallery .cardbox .card .cardFace, .work .gallery .cardbox .card .cardBack {
-        position: absolute;
-        width: 100%;
-        height: auto;
-        backface-visibility: hidden; }
-      .work .gallery .cardbox .card .cardFace a {
-        flex: 1 1 auto;
-        width: 50px;
-        margin: 10px; }
-        @media screen and (max-width: 600px) {
-          .work .gallery .cardbox .card .cardFace a {
-            width: 100%; } }
-      .work .gallery .cardbox .card .cardFace img {
-        width: 100%;
-        padding: 0px;
-        margin: 0px;
-        border: 0px; }
-      .work .gallery .cardbox .card .cardBack {
-        transform: rotateY(180deg); }
+.resume {
+  display: inline-block; }
+  .resume img {
+    box-shadow: 0px 0px 10px 5px #999;
+    margin: auto; }
 
-#social {
+.work {
   margin-top: 40px;
   background: #fff;
   width: 100%;
   height: auto; }
-  #social .social-links {
+  .work h1 {
+    padding: 40px 20px;
+    color: #42f49e;
+    font-family: "Open Sans", sans-serif; }
+  .work .gallery {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; }
+    .work .gallery .cardbox {
+      position: relative;
+      flex: 1 1 auto;
+      width: 50%;
+      height: auto; }
+      .work .gallery .cardbox:hover .card {
+        transform: rotateY(180deg); }
+      @media screen and (max-width: 600px) {
+        .work .gallery .cardbox {
+          flex: 1 100%; } }
+      .work .gallery .cardbox .card {
+        position: relative;
+        width: 100%;
+        height: 600px;
+        transition: all 1s ease;
+        transform-style: preserve-3d; }
+        @media screen and (max-width: 600px) {
+          .work .gallery .cardbox .card {
+            display: block;
+            width: 100%;
+            height: 300px; } }
+        .work .gallery .cardbox .card .workboxback {
+          background-color: black;
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          width: 100%;
+          height: auto;
+          background-size: contain;
+          backface-visibility: hidden;
+          transform: rotateY(180deg); }
+          .work .gallery .cardbox .card .workboxback p {
+            color: red;
+            margin: 50px; }
+        .work .gallery .cardbox .card .workboxfront {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          width: 100%;
+          height: auto;
+          background-size: contain;
+          backface-visibility: hidden; }
+          .work .gallery .cardbox .card .workboxfront a img {
+            width: 100%;
+            height: auto; }
+  .work .social-links {
     margin: auto;
     width: 40%;
     display: flex;
     justify-content: space-around; }
     @media screen and (max-width: 600px) {
-      #social .social-links {
+      .work .social-links {
         width: 80%; } }
-  #social .social {
+  .work .social {
     margin: auto;
     width: 100%;
     padding: 40px 0px; }
-    #social .social a {
+    .work .social a {
       text-decoration: none; }
-    #social .social h1 {
+    .work .social h1 {
       font-weight: 400;
       padding: 50px 0px;
       color: #333;
       font-family: "Open Sans", sans-serif; }
-    #social .social #email {
+    .work .social #email {
       display: inline-block;
       width: auto;
       color: #333;
@@ -437,7 +459,7 @@ header {
       font-size: 28px;
       text-decoration: none; }
       @media screen and (max-width: 600px) {
-        #social .social #email {
+        .work .social #email {
           font-size: 24px; } }
 
 #contact {
